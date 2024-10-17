@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="currency_convertor_basic_storyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLF-tZ-jd2">
+                                <rect key="frame" x="50" y="169" width="340" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWm-o0-48S">
+                                <rect key="frame" x="50" y="237" width="340" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vb5-Tr-S0y">
+                                <rect key="frame" x="182.66666666666666" y="295" width="74.999999999999972" height="32"/>
+                                <segments>
+                                    <segment title="₹"/>
+                                    <segment title="💵"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTI-v5-KXq">
+                                <rect key="frame" x="179.33333333333334" y="352" width="81.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="convert"/>
+                                <connections>
+                                    <action selector="convertTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1MI-gW-N9q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mej-ir-KZB">
+                                <rect key="frame" x="191" y="100" width="58" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lTI-v5-KXq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AAX-nL-s7P"/>
+                            <constraint firstItem="GWm-o0-48S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ANw-Eb-3gI"/>
+                            <constraint firstItem="lTI-v5-KXq" firstAttribute="top" secondItem="vb5-Tr-S0y" secondAttribute="bottom" constant="26" id="B9C-Kh-dKX"/>
+                            <constraint firstItem="sLF-tZ-jd2" firstAttribute="top" secondItem="mej-ir-KZB" secondAttribute="bottom" constant="35" id="I3f-tS-ftn"/>
+                            <constraint firstItem="sLF-tZ-jd2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qvs-mH-yFs"/>
+                            <constraint firstItem="sLF-tZ-jd2" firstAttribute="top" secondItem="mej-ir-KZB" secondAttribute="bottom" constant="35" id="REC-su-CnA"/>
+                            <constraint firstItem="mej-ir-KZB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sbt-TO-WJB"/>
+                            <constraint firstItem="GWm-o0-48S" firstAttribute="top" secondItem="sLF-tZ-jd2" secondAttribute="bottom" constant="34" id="Uw8-7b-vDx"/>
+                            <constraint firstItem="GWm-o0-48S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vtr-Qd-XYy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GWm-o0-48S" secondAttribute="trailing" constant="50" id="X1F-K6-Ubv"/>
+                            <constraint firstItem="mej-ir-KZB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="aip-jY-MQG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sLF-tZ-jd2" secondAttribute="trailing" constant="50" id="bxs-Bb-hm7"/>
+                            <constraint firstItem="vb5-Tr-S0y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="szF-p1-bAp"/>
+                            <constraint firstItem="sLF-tZ-jd2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="uOG-Ft-8MF"/>
+                            <constraint firstItem="vb5-Tr-S0y" firstAttribute="top" secondItem="GWm-o0-48S" secondAttribute="bottom" constant="24" id="wUc-ZT-o63"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="GWm-o0-48S" id="88g-SP-LqT"/>
+                        <outlet property="convertedLabel" destination="mej-ir-KZB" id="S3M-7u-exq"/>
+                        <outlet property="currencySegment" destination="vb5-Tr-S0y" id="RK0-Xv-Wl3"/>
+                        <outlet property="rateTextField" destination="sLF-tZ-jd2" id="njl-h2-7LG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="45" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
